@@ -1,0 +1,2 @@
+# tf_dpgmm (diagonal covariance)
+If any datapoints are equal to the zero vector, they will be ignored. See the use of ```zeta_mask``` in ```dpgmm_vi.py```. This enables the use of differently sized datasets (because you can pad the smaller ones with zero vectors), but may not be desirable for you!

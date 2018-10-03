@@ -8,6 +8,8 @@ from matplotlib.patches import Circle
 import colorsys 
 
 """
+SPHERICAL COVARIANCE, i.e. isotropic
+
 Plots to demonstrate use of dpgmm_vi.py
 
 python demos.py
@@ -17,7 +19,7 @@ mcusi@mit.edu, july 2018
 
 
 def gen_demo_data(batch_size=1, np_seed=None, D=2, use_zeros=True):
-
+    #generates data from multivariate gaussian with isotropic covariance matrix
     Nmax = 6*25
     np.random.seed(np_seed)
     for b in range(batch_size):
@@ -137,6 +139,7 @@ def batch_demo(batch_size=2, np_seed=0, tf_seed=0, alpha=1.0, T=100, max_n_iter=
         plt.show()
 
 if __name__ == "__main__":
+    print('Spherical Covariance Model')
     np_seed = 23; tf_seed = 100; alpha=1.0; T=100; max_n_iter=20;
     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     print('Change in ELBO with each iteration of updates:')
