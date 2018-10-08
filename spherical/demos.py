@@ -26,8 +26,8 @@ def gen_demo_data(batch_size=1, np_seed=None, D=2, use_zeros=True):
         K = np.random.randint(2, high=6+1)
         in_dataset = 0
         for k in range(K):
-            mean = 4*np.random.randn(D) - 1
-            cov = 0.1*np.eye(D) + np.random.rand()*np.eye(D)
+            mean = 3.5*np.random.randn(D) - 1
+            cov = 0.1*np.eye(D) + [0.25,1][np.random.randint(2)]*np.eye(D)
             n = np.random.randint(10, high=25+1)
             in_dataset += n
             gaussian_data = np.random.multivariate_normal(mean, cov, n)
